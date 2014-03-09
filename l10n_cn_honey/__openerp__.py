@@ -17,23 +17,28 @@
 #
 ##############################################################################
 {
-    "name": "Base Module for auto init for LeiAo company",
+    "name": "Localization Module For Chinese",
     "version": "0.1",
     "author": "cysnake4713",
     "maintainer": "cysnake4713@gmail.com",
     "website": "http://www.cysnake.com",
     "description": u"""
-Base Module for auto init for LeiAo company
+Localization Module For Chinese
 """,
-    "depends": ['oe_cn_base_fonts', 'auth_crypt'],
-    "category": "Generic Modules/Base",
+    "depends": [],
+    "category": "Localization",
     "demo_xml": [],
+    "data": [
+        'data/res.country.state.csv',
+        'data/data.xml',
+    ],
     "update_xml": [
+        'res_partner.xml',
+    ],
+    "init_xml": [
+
     ],
     "license": "GPL-3",
     "active": False,
     "installable": True
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
