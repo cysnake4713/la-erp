@@ -29,14 +29,14 @@ Localization Module For Chinese
     "category": "Localization",
     "demo_xml": [],
     "data": [
-        'data/res.country.state.csv',
-        'data/data.xml',
     ],
     "update_xml": [
-        'res_partner.xml',
+        'project.xml',
     ],
     "init_xml": [
 
+    ],
+    "css": [
     ],
     "license": "GPL-3",
     "active": False,

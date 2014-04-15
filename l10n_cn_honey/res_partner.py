@@ -7,6 +7,5 @@ __author__ = 'cysnake4713'
 class ResPartnerInherit(osv.osv):
     _inherit = "res.partner"
     _defaults = {
-        # 'country_id': lambda self, cr, uid, ctx: self.pool.get('res.company')._company_default_get(cr, uid, 'res.partner', context=ctx),
         'country_id': lambda self, cr, uid, ctx: self.pool.get('ir.model.data').get_object_reference(cr, 1, 'base', 'cn')[1],
     }

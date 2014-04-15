@@ -1,0 +1,1 @@
+openerp-server -d la-demo --stop-after-init -c ~/pythonenv/openerp7-la/openerp/.openerp_serverrc -u la_project_temp
