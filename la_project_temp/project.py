@@ -9,6 +9,8 @@ class LaProject(osv.osv):
     _name = "la.project.project"
     _inherit = ['mail.thread', 'ir.needaction_mixin']
     _columns = {
+        'partner_id': fields.many2one('res.partner', u'客户'),
+
         'name': fields.char(u'项目名称', 128),
         'type': fields.char(u'项目类型', 128),
         'manager': fields.char(u'项目负责人', 128),
@@ -35,5 +37,24 @@ class LaProjectIncome(osv.osv):
     _name = "la.project.income"
     _columns = {
         'price': fields.char(u'金额', 128),
-        'get_time': fields.char(u'时间', 128),
+        'get_time': fields.date(u'时间'),
+    }
+
+
+class PartnerEvent(osv.osv):
+    _name = "res.partner.event"
+    _inherit = ['mail.thread', 'ir.needaction_mixin']
+    _rec_name = 'note'
+    _columns = {
+        'type': fields.char(u'类型', 128),
+        'note': fields.text(u'备注'),
+        'partner_ids': fields.many2many('res.partner', 'rel_partner_event', 'event_id', 'partner_id', u'客户'),
+
+    }
+
+
+class PartnerInherit(osv.osv):
+    _inherit = "res.partner"
+    _columns = {
+        'event_ids': fields.many2many('res.partner.event', 'rel_partner_event', 'partner_id', 'event_id', u'事件'),
     }

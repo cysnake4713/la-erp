@@ -16,8 +16,8 @@
                             </h1>
                         </div>
                         <group>
+                            <field name="partner_id"/>
                             <field name="type"/>
-                            <field name="manager"/>
                         </group>
                         <notebook>
                             <page string="质量管理情况">
@@ -125,7 +125,67 @@
                   parent="menu_la_project_project_root" action="action_la_project_project"/>
         <menuitem name="项目收费" id="menu_la_project__income" sequence="20"
                   parent="menu_la_project_project_root" action="action_la_project_income"/>
-         <menuitem name="状态管理" id="menu_la_project_state" sequence="30"
+        <menuitem name="状态管理" id="menu_la_project_state" sequence="30"
                   parent="menu_la_project_project_root" action="action_la_project_state"/>
+
+
+        <record id="view_res_partner_event_form" model="ir.ui.view">
+            <field name="name">res.partner.event.form</field>
+            <field name="model">res.partner.event</field>
+            <field name="arch" type="xml">
+                <form string="事件" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="type"/>
+                            <field name="note"/>
+                            <field name="partner_ids" wigdet="many2many_tags"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"
+                               help="Follow this project to automatically track the events of this project."
+                               groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_res_partner_event_tree" model="ir.ui.view">
+            <field name="name">res.partner.event.tree</field>
+            <field name="model">res.partner.event</field>
+            <field name="arch" type="xml">
+                <tree string="事件" version="7.0">
+                    <field name="type"/>
+                    <field name="note"/>
+                    <field name="partner_ids"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_res_partner_event" model="ir.actions.act_window">
+            <field name="name">res.partner.event</field>
+            <field name="res_model">res.partner.event</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="事件" id="menu_crm_event" parent="base.menu_sales"
+                  action="action_res_partner_event" sequence="4"/>
+        <record id="view_partner_form_inherit_event" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.event</field>
+            <field name="model">res.partner</field>
+            <field name="priority">1</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@string='Internal Notes']" position="after">
+                    <page string="事件">
+                        <field name="event_ids">
+                            <tree>
+                                <field name="type"/>
+                                <field name="note"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
     </data>
 </openerp>
