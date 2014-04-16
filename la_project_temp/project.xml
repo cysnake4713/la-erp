@@ -77,6 +77,7 @@
             <field name="model">la.project.income</field>
             <field name="arch" type="xml">
                 <tree string="收费信息" version="7.0">
+                    <field name="project_id"/>
                     <field name="price"/>
                     <field name="get_time"/>
                 </tree>
@@ -89,6 +90,7 @@
                 <form string="收费信息" version="7.0">
                     <sheet>
                         <group>
+                            <field name="project_id"/>
                             <field name="price"/>
                             <field name="get_time"/>
                         </group>
