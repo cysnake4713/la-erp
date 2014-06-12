@@ -17,28 +17,22 @@
 #
 ##############################################################################
 {
-    "name": "Localization Module For Chinese",
-    "version": "0.1",
-    "author": "cysnake4713",
-    "maintainer": "cysnake4713@gmail.com",
-    "website": "http://www.cysnake.com",
-    "description": u"""
+    'name': 'Localization Module For Chinese',
+    'version': '0.1',
+    'author': 'cysnake4713',
+    'maintainer': 'cysnake4713@gmail.com',
+    'website': 'http://www.cysnake.com',
+    'description': u'''
 Localization Module For Chinese
-""",
-    "depends": [],
-    "category": "Localization",
-    "demo_xml": [],
-    "data": [
+''',
+    'depends': ['l10n_cn'],
+    'category': 'Localization',
+    'demo_xml': [],
+    'data': [
+        'views/base_override.xml',
     ],
-    "update_xml": [
-        'project.xml',
+    'qweb': [
+        'static/src/xml/base_web.xml',
     ],
-    "init_xml": [
-
-    ],
-    "css": [
-    ],
-    "license": "GPL-3",
-    "active": False,
-    "installable": True
+    'installable': True,
 }
