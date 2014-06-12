@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="view_la_project_project_tree" model="ir.ui.view">
+            <field name="name">la.project.project</field>
+            <field name="model">la.project.project</field>
+            <field name="arch" type="xml">
+                <tree string="Project Info" version="7.0">
+                    <field name="number"/>
+                    <field name="name"/>
+                    <field name="type_id"/>
+                    <field name="customer_id"/>
+                    <field name="temp_department_id"/>
+                    <field name="temp_user_ids"/>
+                    <field name="state"/>
+                    <field name="progress_percent"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_la_project_project_form" model="ir.ui.view">
+            <field name="name">la.project.project</field>
+            <field name="model">la.project.project</field>
+            <field name="arch" type="xml">
+                <form string="Project Info" version="7.0">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="项目名称"/>
+                            </h1>
+                            <h2>
+                                <field name="number" placeholder="项目编号"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type_id"/>
+                                <field name="customer_id"/>
+                                <field name="temp_department_id" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="sign_date"/>
+                                <field name="scale"/>
+                                <field name="location"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Quality Info">
+                                <group>
+                                    <group>
+                                        <field name="design_plan"/>
+                                        <field name="design_input"/>
+                                        <field name="design_approve"/>
+                                        <field name="design_confirm"/>
+                                    </group>
+                                    <group>
+                                        <field name="level"/>
+                                        <field name="temp_chief_ids" widget="many2many_tags"/>
+                                        <field name="temp_user_ids" widget="many2many_tags"/>
+                                        <field name="is_documented"/>
+                                    </group>
+                                    <group col="1" colspan="2">
+                                        <field name="quality_comment"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Progress Info">
+                                <group>
+                                    <group>
+                                        <field name="state"/>
+                                        <field name="progress_percent"/>
+                                    </group>
+                                    <group>
+                                        <field name="this_month_report"/>
+                                        <field name="next_month_report"/>
+                                    </group>
+                                    <group col="1" colspan="2">
+                                        <field name="progress_comment"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Incomes Info">
+                                <group>
+                                    <group>
+                                        <field name="total_funds" string="Total Funds(Wan)" widget="monetary"/>
+                                        <field name="headquarter_deduct"/>
+                                    </group>
+                                    <group>
+                                        <field name="receive_funds"/>
+                                        <field name="receive_percent"/>
+                                    </group>
+                                    <group col="1" colspan="2">
+                                        <label for="income_ids"/>
+                                        <field name="income_ids" nolabel="1">
+                                            <tree editable="top">
+                                                <field name="price" widget="monetary"/>
+                                                <field name="paid_date"/>
+                                            </tree>
+                                        </field>
+                                        <field name="funds_comment"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Comments">
+                                <group>
+                                    <field name="comment" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!--<div class="oe_chatter">-->
+                    <!--<field name="message_follower_ids" widget="mail_followers"-->
+                    <!--help="Follow this project to automatically track the events of this project."-->
+                    <!--groups="base.group_user"/>-->
+                    <!--<field name="message_ids" widget="mail_thread"/>-->
+                    <!--</div>-->
+                </form>
+            </field>
+        </record>
+        <record id="view_la_project_income_tree" model="ir.ui.view">
+            <field name="name">la.project.income.tree</field>
+            <field name="model">la.project.income</field>
+            <field name="arch" type="xml">
+                <tree string="收费信息" version="7.0">
+                    <field name="project_id"/>
+                    <field name="price"/>
+                    <field name="paid_date"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_la_project_income_form" model="ir.ui.view">
+            <field name="name">la.project.income.form</field>
+            <field name="model">la.project.income</field>
+            <field name="arch" type="xml">
+                <form string="收费信息" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="project_id"/>
+                            <field name="price"/>
+                            <field name="paid_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

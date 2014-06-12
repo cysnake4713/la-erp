@@ -22,9 +22,9 @@
     'author': 'cysnake4713',
     'maintainer': 'cysnake4713@gmail.com',
     'website': 'http://www.cysnake.com',
-    'description': u'''
+    'description': u"""
 Localization Module For Chinese
-''',
+""",
     'depends': ['l10n_cn'],
     'category': 'Localization',
     'demo_xml': [],

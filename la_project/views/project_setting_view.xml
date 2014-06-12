@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="view_la_project_type_tree" model="ir.ui.view">
+            <field name="name">la.project.type.tree</field>
+            <field name="model">la.project.type</field>
+            <field name="arch" type="xml">
+                <tree string="Project Type Info" version="7.0" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_la_project_department_tree" model="ir.ui.view">
+            <field name="name">la.project.temp.department.tree</field>
+            <field name="model">la.project.temp.department</field>
+            <field name="arch" type="xml">
+                <tree string="Project Department Info" version="7.0" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_la_project_member_tree" model="ir.ui.view">
+            <field name="name">la.project.temp.member.tree</field>
+            <field name="model">la.project.temp.member</field>
+            <field name="arch" type="xml">
+                <tree string="Project Member Info" version="7.0" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

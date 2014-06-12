@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 # __author__ = cysnake4713@gmail.com
-##############################################################################
+# #############################################################################
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
 #
@@ -17,28 +17,22 @@
 #
 ##############################################################################
 {
-    "name": "Project Module For Leiao Company",
-    "version": "0.1",
-    "author": "cysnake4713",
-    "maintainer": "cysnake4713@gmail.com",
-    "website": "http://www.cysnake.com",
-    "description": u"""
+    'name': 'Project Module For Leiao Company',
+    'version': '0.1',
+    'author': 'cysnake4713',
+    'maintainer': 'cysnake4713@gmail.com',
+    'website': 'http://www.cysnake.com',
+    'description': u"""
 Project Module For Leiao Company
 """,
-    "depends": ['base','l10n_cn_honey','mail'],
-    "category": "Project",
-    "demo_xml": [],
-    "data": [
+    'depends': ['base', 'base_override', 'mail'],
+    'category': 'Project',
+    'demo_xml': [],
+    'data': [
+        'views/project_menu.xml',
+        'views/project_setting_view.xml',
+        'views/project_view.xml',
     ],
-    "update_xml": [
-        'project.xml',
-    ],
-    "init_xml": [
-
-    ],
-    "css": [
-    ],
-    "license": "GPL-3",
-    "active": False,
-    "installable": True
+    'qweb': [],
+    'installable': True,
 }
