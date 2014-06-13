@@ -26,13 +26,17 @@
 Project Module For Leiao Company
 """,
     'depends': ['base', 'base_override', 'mail'],
-    'category': 'Project',
+    'category': 'Project Management',
     'demo_xml': [],
     'data': [
+        'security/groups.xml',
+        'security/ir.model.access.csv',
+
         'views/project_menu.xml',
         'views/project_setting_view.xml',
         'views/project_view.xml',
     ],
     'qweb': [],
     'installable': True,
+    'application': True,
 }

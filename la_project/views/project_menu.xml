@@ -34,24 +34,27 @@
         </record>
 
         <!--MenuItems-->
-        <menuitem name="Project" id="menu_la_project_root" sequence="20"/>
+        <menuitem name="Project" id="menu_la_project_root" sequence="20"
+                  groups="la_project.project_user"/>
         <!--Project Manage MenuItems-->
         <menuitem name="Project Manage" id="menu_la_project_project_manage" sequence="10"
                   parent="menu_la_project_root"/>
         <menuitem name="Project Info" id="menu_la_project_project_info" sequence="10"
-                  parent="menu_la_project_project_manage" action="action_la_project_project"/>
+                  parent="menu_la_project_project_manage" action="action_la_project_project"
+                  groups="la_project.project_user"/>
         <menuitem name="Project Incomes" id="menu_la_project_project_income" sequence="20"
-                  parent="menu_la_project_project_manage" action="action_la_project_income"/>
+                  parent="menu_la_project_project_manage" action="action_la_project_income"
+                  groups="la_project.project_income_manager"/>
         <!--Project Settings MenuItems-->
         <menuitem name="Project Settings" id="menu_la_project_project_settings" sequence="50"
-                  parent="menu_la_project_root"/>
+                  parent="menu_la_project_root"
+                  groups="la_project.project_admin"/>
         <menuitem name="Project Type Settings" id="menu_la_project_type" sequence="10"
                   parent="menu_la_project_project_settings" action="action_la_project_type"/>
         <menuitem name="Project Department Settings" id="menu_la_project_department" sequence="20"
                   parent="menu_la_project_project_settings" action="action_la_project_department"/>
         <menuitem name="Project Member Settings" id="menu_la_project_member" sequence="30"
                   parent="menu_la_project_project_settings" action="action_la_project_member"/>
-
 
 
         <!--<record id="view_res_partner_event_form" model="ir.ui.view">-->
