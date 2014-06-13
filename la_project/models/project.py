@@ -22,7 +22,7 @@ class LaProject(osv.Model):
     _columns = {
         # base
         'type_id': fields.many2one('la.project.type', 'Project Type'),
-        'customer_id': fields.many2one('res.partner', 'Project Customer'),
+        'customer_id': fields.many2one('res.partner', 'Project Customer', domain=[('customer', '=', True)]),
         'name': fields.char('Project Name', 128, required=True),
         'temp_department_id': fields.many2many('la.project.temp.department', 'rel_project_temp_department', 'project_id', 'department_id',
                                                'Temp Design Department'),

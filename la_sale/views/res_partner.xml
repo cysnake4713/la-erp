@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <!--project.project.filed.tag-->
+        <record id="act_sale_related_project" model="ir.actions.act_window">
+            <field name="name">Related Projects</field>
+            <field name="res_model">la.project.project</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('customer_id','=',active_id)]</field>
+            <field name="context">{'default_customer_id':active_id}</field>
+        </record>
+        <!--View Inherit-->
+        <record id="view_partner_form_inherit_la_project" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.la.project</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button name="%(act_sale_related_project)d"
+                            class="oe_form_field_with_button oe_inline"
+                            string="相关项目"
+                            type="action"
+                            groups="la_project.project_user"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

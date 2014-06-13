@@ -29,12 +29,7 @@ Project Module For Leiao Company
     'category': 'Project Management',
     'demo_xml': [],
     'data': [
-        # 'security/groups.xml',
-        # 'security/ir.model.access.csv',
-
-        # 'views/project_menu.xml',
-        # 'views/project_setting_view.xml',
-        # 'views/project_view.xml',
+        'views/res_partner.xml',
     ],
     'qweb': [],
     'installable': True,
