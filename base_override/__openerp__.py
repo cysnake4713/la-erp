@@ -30,6 +30,7 @@ Localization Module For Chinese
     'demo_xml': [],
     'data': [
         'views/base_override.xml',
+        'views/res_partner.xml',
         'data/base_data.xml',
     ],
     'qweb': [
