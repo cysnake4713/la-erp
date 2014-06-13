@@ -10,13 +10,13 @@ class LaProject(osv.Model):
     _name = "la.project.project"
     # _inherit = ['mail.thread', 'ir.needaction_mixin']
 
+    # noinspection PyUnusedLocal
     def _get_receive_funds(self, cr, uid, ids, field_name, args, context=None):
         result = dict.fromkeys(ids, {'receive_funds': 0.0, 'receive_percent': 0.0})
-        # for obj in self.browse(cr, uid, ids, context=context):
-        # if self.is_project_member(cr, context.get('uid', 1), obj.id, context=context):
-        # result[obj.id] = True
-        # else:
-        # result[obj.id] = False
+        for obj in self.browse(cr, uid, ids, context=context):
+            prices = sum([i.price for i in obj.income_ids])
+            receive_percent = prices / obj.total_funds * 100 if obj.total_funds else 0
+            result[obj.id].update({'receive_funds': prices, 'receive_percent': receive_percent})
         return result
 
     _columns = {
@@ -49,10 +49,10 @@ class LaProject(osv.Model):
         'progress_comment': fields.text('Progress Comment'),
 
         # Incomes
-        'total_funds': fields.float('Total Funds', digits=(8, 2)),
+        'total_funds': fields.float('Total Funds', digits=(10, 4)),
         'income_ids': fields.one2many('la.project.income', 'project_id', string='Project Incomes'),
-        'receive_funds': fields.function(_get_receive_funds, type='float', multi='receive', string='Receive Funds'),
-        'receive_percent': fields.function(_get_receive_funds, type='float', multi='receive', string='Receive Percent'),
+        'receive_funds': fields.function(_get_receive_funds, type='float', digits=(10, 4), multi='receive', string='Receive Funds (wan)'),
+        'receive_percent': fields.function(_get_receive_funds, type='float', digits=(10, 2), multi='receive', string='Receive Percent (%)'),
         'funds_comment': fields.text('Funds Comment'),
         'headquarter_deduct': fields.char('HeadQuarter Deduct', 64),
 
@@ -105,7 +105,7 @@ class LaProjectIncome(osv.Model):
     _name = "la.project.income"
     _rec_name = 'paid_date'
     _columns = {
-        'price': fields.float('Price', (8, 2)),
+        'price': fields.float('Price', digits=(10, 4), required=True),
         'paid_date': fields.date('Paid Date'),
         'project_id': fields.many2one('la.project.project', 'Project', required=True),
     }
