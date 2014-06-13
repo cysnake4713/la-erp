@@ -31,5 +31,14 @@
                 </tree>
             </field>
         </record>
+        <record id="view_res_partner_event_type_tree" model="ir.ui.view">
+            <field name="name">la.res.partner.event.tree</field>
+            <field name="model">la.res.partner.event.type</field>
+            <field name="arch" type="xml">
+                <tree string="Partner Events" version="7.0" editable="top">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
     </data>
 </openerp>

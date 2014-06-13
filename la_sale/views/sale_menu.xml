@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
+        <record id="action_res_partner_event_type" model="ir.actions.act_window">
+            <field name="name">Partner Events Type Settings</field>
+            <field name="res_model">la.res.partner.event.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
         <record id="action_res_partner_event" model="ir.actions.act_window">
             <field name="name">Partner Events</field>
             <field name="res_model">la.res.partner.event</field>
@@ -10,5 +16,8 @@
         <menuitem name="Partner Event" id="menu_sale_event" parent="base.menu_sales"
                   action="action_res_partner_event" sequence="4"
                   groups="la_sale.event_manager"/>
+        <menuitem name="Partner Event Type Settings" id="menu_partner_event_setting" parent="base.menu_base_config" sequence="50"
+                  action="action_res_partner_event_type"
+                  groups="base.group_system"/>
     </data>
 </openerp>
