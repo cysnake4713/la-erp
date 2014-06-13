@@ -25,11 +25,12 @@
     'description': u"""
 Localization Module For Chinese
 """,
-    'depends': ['l10n_cn'],
+    'depends': [],
     'category': 'Localization',
     'demo_xml': [],
     'data': [
         'views/base_override.xml',
+        'data/base_data.xml',
     ],
     'qweb': [
         'static/src/xml/base_web.xml',
