@@ -1,3 +1,3 @@
 __author__ = 'cysnake4713'
-# import res_partner
+import event
 import res_users

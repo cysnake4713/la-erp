@@ -4,7 +4,7 @@
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
+# the Free Software Foundation, either version 3 of the License, or
 #    (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
@@ -30,6 +30,8 @@ Project Module For Leiao Company
     'demo_xml': [],
     'data': [
         'views/res_partner.xml',
+        'views/sale_menu.xml',
+        'views/event_view.xml',
     ],
     'qweb': [],
     'installable': True,

@@ -109,21 +109,3 @@ class LaProjectIncome(osv.Model):
         'paid_date': fields.date('Paid Date'),
         'project_id': fields.many2one('la.project.project', 'Project', required=True),
     }
-
-
-    # class PartnerEvent(osv.osv):
-    # _name = "res.partner.event"
-    # _inherit = ['mail.thread', 'ir.needaction_mixin']
-    # _rec_name = 'note'
-    # _columns = {
-    # 'type': fields.char(u'类型', 128),
-    # 'note': fields.text(u'备注'),
-    # 'partner_ids': fields.many2many('res.partner', 'rel_partner_event', 'event_id', 'partner_id', u'客户'),
-    # }
-
-
-    # class PartnerInherit(osv.osv):
-    # _inherit = "res.partner"
-    # _columns = {
-    # 'event_ids': fields.many2many('res.partner.event', 'rel_partner_event', 'partner_id', 'event_id', u'事件'),
-    # }
