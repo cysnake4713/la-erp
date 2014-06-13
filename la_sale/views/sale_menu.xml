@@ -8,6 +8,7 @@
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem name="Partner Event" id="menu_sale_event" parent="base.menu_sales"
-                  action="action_res_partner_event" sequence="4"/>
+                  action="action_res_partner_event" sequence="4"
+                  groups="la_sale.event_manager"/>
     </data>
 </openerp>

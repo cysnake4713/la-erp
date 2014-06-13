@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="la_sale.event_manager" model="res.groups">
+            <field name="name">Partner Event Manager</field>
+            <field name="category_id" ref="base.module_category_project_management"/>
+            <field name="comment">the Partner Event Manager will be able to edit partner events.</field>
+        </record>
+    </data>
+</openerp>
