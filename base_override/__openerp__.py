@@ -25,7 +25,7 @@
     'description': u"""
 Localization Module For Chinese
 """,
-    'depends': [],
+    'depends': ['base'],
     'category': 'Localization',
     'demo_xml': [],
     'data': [

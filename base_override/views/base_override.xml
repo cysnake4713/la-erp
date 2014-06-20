@@ -5,6 +5,7 @@
     <data>
         <template id="assets_backend1" name="base assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/base_override/static/src/css/base_override.css"/>
                 <script type="text/javascript" src="/base_override/static/src/js/base_announcement.js"></script>
             </xpath>
         </template>

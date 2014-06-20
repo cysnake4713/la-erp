@@ -1,0 +1,384 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* la_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 8.0alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-20 11:41+0000\n"
+"PO-Revision-Date: 2014-06-20 11:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: la_project
+#: selection:la.project.project,state:0
+msgid "Begin"
+msgstr "Begin"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "Comments"
+msgstr "备注"
+
+#. module: la_project
+#: field:la.project.project,design_approve:0
+msgid "Design Approve"
+msgstr "设计评审"
+
+#. module: la_project
+#: field:la.project.project,design_input:0
+msgid "Design Input"
+msgstr "设计输入"
+
+#. module: la_project
+#: field:la.project.project,design_plan:0
+msgid "Design Plan"
+msgstr "设计策划"
+
+#. module: la_project
+#: field:la.project.project,design_confirm:0
+msgid "Design confirm"
+msgstr "设计确认"
+
+#. module: la_project
+#: field:la.project.project,funds_comment:0
+msgid "Funds Comment"
+msgstr "收费备注"
+
+#. module: la_project
+#: field:la.project.project,headquarter_deduct:0
+msgid "HeadQuarter Deduct"
+msgstr "总部提成比例"
+
+#. module: la_project
+#: selection:la.project.project,level:0
+msgid "Headquarter"
+msgstr "院级"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "Incomes Info"
+msgstr "收费情况"
+
+#. module: la_project
+#: field:la.project.project,is_documented:0
+msgid "Is Documented"
+msgstr "是否建档"
+
+#. module: la_project
+#: field:la.project.temp.department,name:0
+#: field:la.project.temp.member,name:0
+#: field:la.project.type,name:0
+msgid "Name"
+msgstr "名称"
+
+#. module: la_project
+#: field:la.project.project,next_month_report:0
+msgid "Next Month Report"
+msgstr "下月进度安排"
+
+#. module: la_project
+#: field:la.project.income,paid_date:0
+msgid "Paid Date"
+msgstr "付款日期"
+
+#. module: la_project
+#: field:la.project.income,price:0
+msgid "Price"
+msgstr "金额(万元)"
+
+#. module: la_project
+#: field:la.project.project,progress_comment:0
+msgid "Progress Comment"
+msgstr "进度备注"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "Progress Info"
+msgstr "进度情况"
+
+#. module: la_project
+#: field:la.project.project,progress_percent:0
+msgid "Progress Percent"
+msgstr "项目形象进度"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_root
+#: field:la.project.income,project_id:0
+msgid "Project"
+msgstr "项目"
+
+#. module: la_project
+#: model:res.groups,name:la_project.project_admin
+msgid "Project Admin"
+msgstr "项目管理员"
+
+#. module: la_project
+#: field:la.project.project,comment:0
+msgid "Project Comment"
+msgstr "项目备注"
+
+#. module: la_project
+#: field:la.project.project,customer_id:0
+msgid "Project Customer"
+msgstr "甲方"
+
+#. module: la_project
+#: model:ir.actions.act_window,name:la_project.action_la_project_department
+#: view:la.project.temp.department:0
+msgid "Project Department Info"
+msgstr "承接部门"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_department
+msgid "Project Department Settings"
+msgstr "承接部门设置"
+
+#. module: la_project
+#: model:ir.actions.act_window,name:la_project.action_la_project_income
+msgid "Project Income Info"
+msgstr "收费情况"
+
+#. module: la_project
+#: model:res.groups,name:la_project.project_income_manager
+msgid "Project Income Manager"
+msgstr "收费负责人"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_project_income
+#: field:la.project.project,income_ids:0
+msgid "Project Incomes"
+msgstr "项目收费"
+
+#. module: la_project
+#: model:ir.actions.act_window,name:la_project.action_la_project_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_project_info
+#: view:la.project.project:0
+msgid "Project Info"
+msgstr "项目信息"
+
+#. module: la_project
+#: field:la.project.project,level:0
+msgid "Project Level"
+msgstr "管理级别"
+
+#. module: la_project
+#: field:la.project.project,location:0
+msgid "Project Location"
+msgstr "项目所在地"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_project_manage
+msgid "Project Manage"
+msgstr "项目管理"
+
+#. module: la_project
+#: model:res.groups,name:la_project.project_manager
+msgid "Project Manager"
+msgstr "项目负责人"
+
+#. module: la_project
+#: model:ir.actions.act_window,name:la_project.action_la_project_member
+#: view:la.project.temp.member:0
+msgid "Project Member Info"
+msgstr "项目人员信息"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_member
+msgid "Project Member Settings"
+msgstr "项目人员管理"
+
+#. module: la_project
+#: field:la.project.project,name:0
+msgid "Project Name"
+msgstr "项目名称"
+
+#. module: la_project
+#: field:la.project.project,number:0
+msgid "Project Number"
+msgstr "项目编号"
+
+#. module: la_project
+#: field:la.project.project,scale:0
+msgid "Project Scale"
+msgstr "规模"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_project_settings
+msgid "Project Settings"
+msgstr "项目设置"
+
+#. module: la_project
+#: field:la.project.project,sign_date:0
+msgid "Project Sign_date"
+msgstr "签订日期"
+
+#. module: la_project
+#: field:la.project.project,state:0
+msgid "Project State"
+msgstr "当前进度"
+
+#. module: la_project
+#: field:la.project.project,type_id:0
+msgid "Project Type"
+msgstr "类别"
+
+#. module: la_project
+#: model:ir.actions.act_window,name:la_project.action_la_project_type
+#: view:la.project.type:0
+msgid "Project Type Info"
+msgstr "项目类别"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_type
+msgid "Project Type Settings"
+msgstr "项目类别设置"
+
+#. module: la_project
+#: model:res.groups,name:la_project.project_user
+msgid "Project User"
+msgstr "项目普通用户"
+
+#. module: la_project
+#: field:la.project.project,quality_comment:0
+msgid "Quality Comment"
+msgstr "质量管理备注"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "Quality Info"
+msgstr "质量管理情况"
+
+#. module: la_project
+#: field:la.project.project,receive_funds:0
+msgid "Receive Funds (wan)"
+msgstr "已收款(万元)"
+
+#. module: la_project
+#: field:la.project.project,receive_percent:0
+msgid "Receive Percent (%)"
+msgstr "占合同额比例 (%)"
+
+#. module: la_project
+#: selection:la.project.project,level:0
+msgid "Segment"
+msgstr "所级"
+
+#. module: la_project
+#: field:la.project.project,temp_department_id:0
+msgid "Temp Design Department"
+msgstr "设计部门"
+
+#. module: la_project
+#: field:la.project.project,temp_chief_ids:0
+msgid "Temp Project Chief"
+msgstr "主管总师"
+
+#. module: la_project
+#: field:la.project.project,temp_user_ids:0
+msgid "Temp Project Manager"
+msgstr "项目负责人"
+
+#. module: la_project
+#: field:la.project.project,this_month_report:0
+msgid "This Month Report"
+msgstr "本月完成情况"
+
+#. module: la_project
+#: field:la.project.project,total_funds:0
+msgid "Total Funds"
+msgstr "合同总款(万元)"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "Total Funds(Wan)"
+msgstr "合同总款(万元)"
+
+#. module: la_project
+#: model:ir.model,name:la_project.model_res_users
+msgid "Users"
+msgstr "用户"
+
+#. module: la_project
+#: model:ir.model,name:la_project.model_la_project_income
+msgid "la.project.income"
+msgstr "项目收费"
+
+#. module: la_project
+#: model:ir.model,name:la_project.model_la_project_project
+msgid "la.project.project"
+msgstr "项目"
+
+#. module: la_project
+#: model:ir.model,name:la_project.model_la_project_temp_department
+msgid "la.project.temp.department"
+msgstr "设计部门"
+
+#. module: la_project
+#: model:ir.model,name:la_project.model_la_project_temp_member
+msgid "la.project.temp.member"
+msgstr "项目人员"
+
+#. module: la_project
+#: model:ir.model,name:la_project.model_la_project_type
+msgid "la.project.type"
+msgstr "项目类别"
+
+#. module: la_project
+#: code:addons/la_project/models/project.py:85
+#: code:addons/la_project/models/project.py:93
+#: code:addons/la_project/models/project.py:101
+#: sql_constraint:la.project.temp.department:0
+#: sql_constraint:la.project.temp.member:0
+#: sql_constraint:la.project.type:0
+#, python-format
+msgid "name must be unique !"
+msgstr "名称不能重复!"
+
+#. module: la_project
+#: code:addons/la_project/models/project.py:65
+#: sql_constraint:la.project.project:0
+#, python-format
+msgid "number must be unique !"
+msgstr "项目编号不能重复!"
+
+#. module: la_project
+#: model:res.groups,comment:la_project.project_admin
+msgid "the Project Admin will be able to access project setting menus."
+msgstr "项目管理员可以通过项目设置菜单管理项目基本属性."
+
+#. module: la_project
+#: model:res.groups,comment:la_project.project_income_manager
+msgid "the Project Income Manager will be able to edit project's incomes."
+msgstr "项目收入经理可以录入项目收费情况."
+
+#. module: la_project
+#: model:res.groups,comment:la_project.project_manager
+msgid "the Project Manager will be able to edit projects."
+msgstr "项目经理可以编辑项目信息."
+
+#. module: la_project
+#: model:res.groups,comment:la_project.project_user
+msgid "the Project User will be able to view all project, but can't edit projects."
+msgstr "项目普通用户可以查看项目信息，但是不能修改."
+
+#. module: la_project
+#: view:la.project.income:0
+msgid "收费信息"
+msgstr "收费信息"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "项目名称"
+msgstr "项目名称"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "项目编号"
+msgstr "项目编号"
+

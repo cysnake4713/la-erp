@@ -60,6 +60,7 @@ class LaProject(osv.Model):
     }
     _defaults = {
         # 'state_id': lambda *a: 'begin',
+        'sign_date': lambda *args: fields.date.today(),
     }
 
     _sql_constraints = [('project_number_unique', 'unique(number)', _('number must be unique !'))]
@@ -108,4 +109,8 @@ class LaProjectIncome(osv.Model):
         'price': fields.float('Price', digits=(10, 4), required=True),
         'paid_date': fields.date('Paid Date'),
         'project_id': fields.many2one('la.project.project', 'Project', required=True),
+    }
+
+    _defaults = {
+        'paid_date': lambda *args: fields.date.today(),
     }

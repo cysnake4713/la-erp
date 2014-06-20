@@ -1,0 +1,58 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 8.0alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-20 12:43+0000\n"
+"PO-Revision-Date: 2014-06-20 12:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base
+#: view:res.partner:0
+msgid "Tags..."
+msgstr "标签..."
+
+#. module: base
+#: view:res.bank:0
+#: view:res.company:0
+#: view:res.partner:0
+#: view:res.partner.bank:0
+msgid "ZIP"
+msgstr "邮编"
+
+#. module: base
+#: view:res.bank:0
+#: view:res.company:0
+#: view:res.partner:0
+msgid "Street..."
+msgstr "街道..."
+
+#. module: base
+#: view:res.company:0
+#: view:res.partner:0
+msgid "e.g. www.openerp.com"
+msgstr "例如: www.openerp.com"
+
+#. module: base
+#: view:res.partner:0
+msgid "Put an internal note..."
+msgstr "输入内部记录..."
+
+#. module: base
+#: view:res.partner:0
+msgid "e.g. Sales Director"
+msgstr "例如: 销售经理"
+
+#. module: base
+#: view:res.partner:0
+#: view:res.users:0
+msgid "e.g. +32.81.81.37.00"
+msgstr "例如: 18666289987"

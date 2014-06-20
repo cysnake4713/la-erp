@@ -24,7 +24,7 @@
                 </xpath>
                 <xpath expr="//page[@string='Internal Notes']" position="after">
                     <page string="Partner Events" groups="la_sale.event_manager">
-                        <field name="event_ids" context="{'default_partner_ids':[(6, 0, [active_id])]}">
+                        <field name="event_ids">
                             <tree>
                                 <field name="event_date"/>
                                 <field name="type"/>
