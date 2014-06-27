@@ -5,3 +5,7 @@
 .openerp .oe_form_editable .oe_form .oe_form_field_datetime input {
   width: 177px;
 }
+
+.openerp div.oe_long_title {
+    width: 90% !important;
+}

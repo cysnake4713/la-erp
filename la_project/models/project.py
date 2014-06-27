@@ -19,6 +19,13 @@ class LaProject(osv.Model):
             result[obj.id].update({'receive_funds': prices, 'receive_percent': receive_percent})
         return result
 
+    # noinspection PyUnusedLocal
+    def _function_chief_ids(self, cr, uid, ids, name, args, context=None):
+        result = dict.fromkeys(ids, False)
+        for obj in self.browse(cr, uid, ids, context=context):
+            result[obj.id] = ','.join([d.name for d in obj.temp_department_ids])
+        return result
+
     _columns = {
         # base
         'type_ids': fields.many2many('la.project.type', 'rel_project_type', 'project_id', 'type_id', 'Project Types'),
@@ -26,15 +33,17 @@ class LaProject(osv.Model):
         'customer_contact_ids': fields.many2many('res.partner', 'rel_project_contact_partner', 'project_id', 'partner_id',
                                                  string='Customer Contacts', domain=[('customer', '=', True)]),
         'name': fields.char('Project Name', 128, required=True),
-        'temp_department_id': fields.many2many('la.project.temp.department', 'rel_project_temp_department', 'project_id', 'department_id',
-                                               'Temp Design Department'),
+        'temp_department_ids': fields.many2many('la.project.temp.department', 'rel_project_temp_department', 'project_id', 'department_id',
+                                                'Temp Design Department'),
         'number': fields.char('Project Number', 128),
         'sign_date': fields.date('Project Sign_date'),
         'scale': fields.char('Project Scale', 128),
         'location': fields.char('Project Location'),
         # quality
         'level': fields.selection([('segment', 'Segment'), ('headquarter', 'Headquarter')], 'Project Level'),
-        'temp_chief_ids': fields.many2many('la.project.temp.member', 'rel_temp_chief_member', 'temp_chief_id', 'member_id', 'Temp Project Chief'),
+        'temp_chief_ids': fields.many2many('la.project.temp.member', 'rel_temp_chief_member', 'temp_chief_id', 'member_id', 'Temp Project Chief',
+                                           store=True),
+        'function_chief_ids': fields.function(_function_chief_ids, type='char', string='For Search Chiefs', store=True),
         'temp_user_ids': fields.many2many('la.project.temp.member', 'rel_temp_user_member', 'temp_user_id', 'member_id', 'Temp Project Manager'),
         'is_documented': fields.boolean('Is Documented'),
         'design_plan': fields.char('Design Plan', 256),

@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
-        <record id="view_la_project_project_tree" model="ir.ui.view">
-            <field name="name">la.project.project</field>
+        <record id="view_la_project_project_search" model="ir.ui.view">
+            <field name="name">la.project.project.search</field>
             <field name="model">la.project.project</field>
             <field name="arch" type="xml">
-                <tree string="Project Info" version="7.0">
+                <search string="Book Search">
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="number"/>
+                    <field name="type_ids"/>
+                    <field name="customer_id"/>
+                    <field name="customer_contact_ids"/>
+                    <field name="temp_department_ids"/>
+                    <field name="level"/>
+                    <field name="temp_chief_ids"/>
+                    <field name="temp_user_ids"/>
+
+                    <filter name="is-paused" string="Is Paused" domain="[('is_pause','=',True)]"/>
+
+                    <group expand="0" string="Group by...">
+                        <filter name="by-department" string="By Department" domain="[]"
+                                context="{'group_by':'function_chief_ids'}"/>
+                        <filter name="by-state" string="By State" domain="[]"
+                                context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="view_la_project_project_tree" model="ir.ui.view">
+            <field name="name">la.project.project.tree</field>
+            <field name="model">la.project.project</field>
+            <field name="arch" type="xml">
+                <tree string="Project Info" version="7.0" colors="grey:is_pause==True;green:state=='complete';">
                     <field name="customer_id"/>
                     <field name="customer_contact_ids"/>
                     <field name="number"/>
                     <field name="name"/>
                     <field name="type_ids"/>
-                    <field name="temp_department_id"/>
+                    <field name="temp_department_ids"/>
                     <field name="temp_user_ids"/>
                     <field name="state"/>
                     <field name="progress_percent"/>
+                    <field name="is_pause" invisible="1"/>
+                    <field name="function_chief_ids" invisible="1"/>
                 </tree>
             </field>
         </record>
         <record id="view_la_project_project_form" model="ir.ui.view">
-            <field name="name">la.project.project</field>
+            <field name="name">la.project.project.form</field>
             <field name="model">la.project.project</field>
             <field name="arch" type="xml">
                 <form string="Project Info" version="7.0">
@@ -27,9 +56,9 @@
                         <field name="state" widget="statusbar" clickable="True"/>
                     </header>
                     <sheet>
-                        <div class="oe_title">
+                        <div class="oe_title oe_long_title">
                             <h1>
-                                <field name="name" placeholder="项目名称"/>
+                                <field name="name" placeholder="项目名称" style="70%%"/>
                             </h1>
                             <h2>
                                 <field name="number" placeholder="项目编号"/>
@@ -42,7 +71,7 @@
                                 <field name="customer_contact_ids" widget="many2many_tags" domain="[('parent_id','=',customer_id)]"
                                        context="{'default_parent_id':customer_id}"
                                        attrs="{'invisible':[('customer_id','=',False)]}"/>
-                                <field name="temp_department_id" widget="many2many_tags"/>
+                                <field name="temp_department_ids" widget="many2many_tags"/>
                             </group>
                             <group>
                                 <field name="sign_date"/>
