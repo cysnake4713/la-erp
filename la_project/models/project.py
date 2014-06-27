@@ -21,12 +21,14 @@ class LaProject(osv.Model):
 
     _columns = {
         # base
-        'type_id': fields.many2one('la.project.type', 'Project Type'),
+        'type_ids': fields.many2many('la.project.type', 'rel_project_type', 'project_id', 'type_id', 'Project Types'),
         'customer_id': fields.many2one('res.partner', 'Project Customer', domain=[('customer', '=', True)]),
+        'customer_contact_ids': fields.many2many('res.partner', 'rel_project_contact_partner', 'project_id', 'partner_id',
+                                                 string='Customer Contacts', domain=[('customer', '=', True)]),
         'name': fields.char('Project Name', 128, required=True),
         'temp_department_id': fields.many2many('la.project.temp.department', 'rel_project_temp_department', 'project_id', 'department_id',
                                                'Temp Design Department'),
-        'number': fields.char('Project Number', 64),
+        'number': fields.char('Project Number', 128),
         'sign_date': fields.date('Project Sign_date'),
         'scale': fields.char('Project Scale', 128),
         'location': fields.char('Project Location'),
@@ -41,8 +43,12 @@ class LaProject(osv.Model):
         'design_confirm': fields.char('Design confirm', 256),
         'quality_comment': fields.text('Quality Comment'),
         # Progress
-        # TODO:
-        'state': fields.selection([('begin', 'Begin')], 'Project State'),
+        'state': fields.selection([('plan', 'Initial Plan'),
+                                   ('research', 'Research & Input'),
+                                   ('init', 'Initial program'),
+                                   ('deep', 'Deep Program'),
+                                   ('output', 'Project Output'),
+                                   ('complete', 'Complete')], 'Project State'),
         'progress_percent': fields.char('Progress Percent', 16),
         'this_month_report': fields.char('This Month Report', 128),
         'next_month_report': fields.char('Next Month Report', 128),
@@ -57,13 +63,14 @@ class LaProject(osv.Model):
         'headquarter_deduct': fields.char('HeadQuarter Deduct', 64),
 
         'comment': fields.text('Project Comment'),
+        'is_pause': fields.boolean('Is Project Pause'),
     }
     _defaults = {
-        # 'state_id': lambda *a: 'begin',
+        # 'state': lambda *a: 'plan',
         'sign_date': lambda *args: fields.date.today(),
     }
 
-    _sql_constraints = [('project_number_unique', 'unique(number)', _('number must be unique !'))]
+    # _sql_constraints = [('project_number_unique', 'unique(number)', _('number must be unique !'))]
 
     def name_search(self, cr, user, name='', args=None, operator='ilike', context=None, limit=100):
         if not args:
