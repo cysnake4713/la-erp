@@ -32,9 +32,9 @@ Project Module For Leiao Company
         'security/groups.xml',
         'security/ir.model.access.csv',
 
+        'views/project_view.xml',
         'views/project_menu.xml',
         'views/project_setting_view.xml',
-        'views/project_view.xml',
     ],
     'qweb': [],
     'installable': True,

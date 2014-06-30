@@ -11,6 +11,8 @@
                     <field name="number"/>
                     <field name="type_ids"/>
                     <field name="customer_id"/>
+                    <field name="customer_state"/>
+                    <field name="customer_city"/>
                     <field name="customer_contact_ids"/>
                     <field name="temp_department_ids"/>
                     <field name="level"/>
@@ -26,6 +28,23 @@
                                 context="{'group_by':'state'}"/>
                     </group>
                 </search>
+            </field>
+        </record>
+        <record id="view_la_project_project_tree_customer" model="ir.ui.view">
+            <field name="name">la.project.project.tree.customer</field>
+            <field name="model">la.project.project</field>
+            <field name="priority" eval="30"/>
+            <field name="arch" type="xml">
+                <tree string="Project Info" version="7.0">
+                    <field name="customer_state"/>
+                    <field name="customer_city"/>
+                    <field name="customer_id"/>
+                    <field name="customer_contact_ids"/>
+                    <field name="number"/>
+                    <field name="name"/>
+                    <field name="importance"/>
+                    <field name="temp_department_ids" invisible="1"/>
+                </tree>
             </field>
         </record>
         <record id="view_la_project_project_tree" model="ir.ui.view">
@@ -67,16 +86,18 @@
                         <group>
                             <group>
                                 <field name="type_ids" widget="many2many_tags"/>
-                                <field name="customer_id" domain="[('is_company','=',True)]"/>
-                                <field name="customer_contact_ids" widget="many2many_tags" domain="[('parent_id','=',customer_id)]"
-                                       context="{'default_parent_id':customer_id}"
-                                       attrs="{'invisible':[('customer_id','=',False)]}"/>
                                 <field name="temp_department_ids" widget="many2many_tags"/>
+                                <field name="customer_id" domain="[('is_company','=',True)]"/>
                             </group>
                             <group>
                                 <field name="sign_date"/>
                                 <field name="scale"/>
                                 <field name="location"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="customer_contact_ids" domain="[('parent_id','=',customer_id)]"
+                                       context="{'default_parent_id':customer_id}"
+                                       attrs="{'invisible':[('customer_id','=',False)]}"/>
                             </group>
                         </group>
                         <notebook>
@@ -87,6 +108,7 @@
                                         <field name="design_input"/>
                                         <field name="design_approve"/>
                                         <field name="design_confirm"/>
+                                        <field name="importance"/>
                                     </group>
                                     <group>
                                         <field name="level"/>

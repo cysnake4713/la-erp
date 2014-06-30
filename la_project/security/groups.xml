@@ -6,6 +6,11 @@
             <field name="category_id" ref="base.module_category_project_management"/>
             <field name="comment">the Project User will be able to view all project, but can't edit projects.</field>
         </record>
+        <record id="la_project.project_chief" model="res.groups">
+            <field name="name">Project Chief User</field>
+            <field name="category_id" ref="base.module_category_project_management"/>
+            <field name="comment">the Project Chief will be able to view all project in special view, but can't edit projects.</field>
+        </record>
         <record id="la_project.project_manager" model="res.groups">
             <field name="name">Project Manager</field>
             <field name="category_id" ref="base.module_category_project_management"/>
@@ -22,6 +27,7 @@
             <field name="name">Project Income Manager</field>
             <field name="category_id" ref="base.module_category_project_management"/>
             <field name="comment">the Project Income Manager will be able to edit project's incomes.</field>
+            <field name="implied_ids" eval="[(4, ref('la_project.project_user'))]"/>
         </record>
     </data>
 </openerp>

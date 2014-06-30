@@ -30,6 +30,8 @@ class LaProject(osv.Model):
         # base
         'type_ids': fields.many2many('la.project.type', 'rel_project_type', 'project_id', 'type_id', 'Project Types'),
         'customer_id': fields.many2one('res.partner', 'Project Customer', domain=[('customer', '=', True)]),
+        'customer_state': fields.related('customer_id', 'state_id', type='many2one', relation='res.country.state', string='Customer State'),
+        'customer_city': fields.related('customer_id', 'city', type='char', string='Customer City'),
         'customer_contact_ids': fields.many2many('res.partner', 'rel_project_contact_partner', 'project_id', 'partner_id',
                                                  string='Customer Contacts', domain=[('customer', '=', True)]),
         'name': fields.char('Project Name', 128, required=True),
@@ -73,6 +75,7 @@ class LaProject(osv.Model):
 
         'comment': fields.text('Project Comment'),
         'is_pause': fields.boolean('Is Project Pause'),
+        'importance': fields.char('Importance', 64),
     }
     _defaults = {
         # 'state': lambda *a: 'plan',

@@ -7,6 +7,14 @@
             <field name="res_model">la.project.project</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_by-department': 1,'tree_view_ref':'la_project.view_la_project_project_tree'}</field>
+        </record>
+        <record id="action_la_project_project_chief" model="ir.actions.act_window">
+            <field name="name">Project Chief Info</field>
+            <field name="res_model">la.project.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_by-department': 1,'tree_view_ref':'la_project.view_la_project_project_tree_customer'}</field>
         </record>
         <record id="action_la_project_income" model="ir.actions.act_window">
             <field name="name">Project Income Info</field>
@@ -34,14 +42,17 @@
         </record>
 
         <!--MenuItems-->
-        <menuitem name="Project" id="menu_la_project_root" sequence="20"
-                  groups="la_project.project_user"/>
+        <menuitem name="Project" id="menu_la_project_root" sequence="20" groups="la_project.project_user,la_project.project_chief"/>
         <!--Project Manage MenuItems-->
         <menuitem name="Project Manage" id="menu_la_project_project_manage" sequence="10"
-                  parent="menu_la_project_root"/>
+                  parent="menu_la_project_root"
+                  groups="la_project.project_user,la_project.project_chief"/>
         <menuitem name="Project Info" id="menu_la_project_project_info" sequence="10"
                   parent="menu_la_project_project_manage" action="action_la_project_project"
                   groups="la_project.project_user"/>
+        <menuitem name="Project Chief" id="menu_la_project_project_chief_info" sequence="12"
+                  parent="menu_la_project_project_manage" action="action_la_project_project_chief"
+                  groups="la_project.project_chief"/>
         <menuitem name="Project Incomes" id="menu_la_project_project_income" sequence="20"
                   parent="menu_la_project_project_manage" action="action_la_project_income"
                   groups="la_project.project_income_manager"/>
@@ -55,65 +66,5 @@
                   parent="menu_la_project_project_settings" action="action_la_project_department"/>
         <menuitem name="Project Member Settings" id="menu_la_project_member" sequence="30"
                   parent="menu_la_project_project_settings" action="action_la_project_member"/>
-
-
-        <!--<record id="view_res_partner_event_form" model="ir.ui.view">-->
-        <!--<field name="name">res.partner.event.form</field>-->
-        <!--<field name="model">res.partner.event</field>-->
-        <!--<field name="arch" type="xml">-->
-        <!--<form string="事件" version="7.0">-->
-        <!--<sheet>-->
-        <!--<group>-->
-        <!--<field name="type"/>-->
-        <!--<field name="note"/>-->
-        <!--<field name="partner_ids" wigdet="many2many_tags"/>-->
-        <!--</group>-->
-        <!--</sheet>-->
-        <!--<div class="oe_chatter">-->
-        <!--<field name="message_follower_ids" widget="mail_followers"-->
-        <!--help="Follow this project to automatically track the events of this project."-->
-        <!--groups="base.group_user"/>-->
-        <!--<field name="message_ids" widget="mail_thread"/>-->
-        <!--</div>-->
-        <!--</form>-->
-        <!--</field>-->
-        <!--</record>-->
-        <!--<record id="view_res_partner_event_tree" model="ir.ui.view">-->
-        <!--<field name="name">res.partner.event.tree</field>-->
-        <!--<field name="model">res.partner.event</field>-->
-        <!--<field name="arch" type="xml">-->
-        <!--<tree string="事件" version="7.0">-->
-        <!--<field name="type"/>-->
-        <!--<field name="note"/>-->
-        <!--<field name="partner_ids"/>-->
-        <!--</tree>-->
-        <!--</field>-->
-        <!--</record>-->
-        <!--<record id="action_res_partner_event" model="ir.actions.act_window">-->
-        <!--<field name="name">res.partner.event</field>-->
-        <!--<field name="res_model">res.partner.event</field>-->
-        <!--<field name="view_type">form</field>-->
-        <!--<field name="view_mode">tree,form</field>-->
-        <!--</record>-->
-        <!--<menuitem name="事件" id="menu_crm_event" parent="base.menu_sales"-->
-        <!--action="action_res_partner_event" sequence="4"/>-->
-        <!--<record id="view_partner_form_inherit_event" model="ir.ui.view">-->
-        <!--<field name="name">res.partner.form.inherit.event</field>-->
-        <!--<field name="model">res.partner</field>-->
-        <!--<field name="priority">1</field>-->
-        <!--<field name="inherit_id" ref="base.view_partner_form"/>-->
-        <!--<field name="arch" type="xml">-->
-        <!--<xpath expr="//page[@string='Internal Notes']" position="after">-->
-        <!--<page string="事件">-->
-        <!--<field name="event_ids">-->
-        <!--<tree>-->
-        <!--<field name="type"/>-->
-        <!--<field name="note"/>-->
-        <!--</tree>-->
-        <!--</field>-->
-        <!--</page>-->
-        <!--</xpath>-->
-        <!--</field>-->
-        <!--</record>-->
     </data>
 </openerp>
