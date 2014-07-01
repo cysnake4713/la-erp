@@ -6,8 +6,7 @@
             <field name="name">Related Projects</field>
             <field name="res_model">la.project.project</field>
             <field name="view_mode">tree,form</field>
-            <field name="domain">[('customer_id','=',active_id)]</field>
-            <field name="context">{'default_customer_id':active_id}</field>
+            <field name="domain">['|',('customer_id','=',active_id),('customer_contact_ids','=',active_id)]</field>
         </record>
         <!--View Inherit-->
         <record id="view_partner_form_inherit_la_project" model="ir.ui.view">

@@ -97,7 +97,13 @@
                             <group colspan="2">
                                 <field name="customer_contact_ids" domain="[('parent_id','=',customer_id)]"
                                        context="{'default_parent_id':customer_id}"
-                                       attrs="{'invisible':[('customer_id','=',False)]}"/>
+                                       attrs="{'invisible':[('customer_id','=',False)]}">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="phone"/>
+                                        <field name="mobile"/>
+                                    </tree>
+                                       </field>
                             </group>
                         </group>
                         <notebook>
