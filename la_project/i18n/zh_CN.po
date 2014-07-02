@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 8.0alpha1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-20 11:41+0000\n"
-"PO-Revision-Date: 2014-06-20 11:41+0000\n"
+"POT-Creation-Date: 2014-07-02 04:28+0000\n"
+"PO-Revision-Date: 2014-07-02 04:28+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,49 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: la_project
-#: selection:la.project.project,state:0
-msgid "Begin"
-msgstr "Begin"
+#: view:la.project.project:0
+msgid "Book Search"
+msgstr "搜索"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "By Department"
+msgstr "按部门"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "By State"
+msgstr "按项目状态"
 
 #. module: la_project
 #: view:la.project.project:0
 msgid "Comments"
 msgstr "备注"
+
+#. module: la_project
+#: selection:la.project.project,state:0
+msgid "Complete"
+msgstr "项目已完成"
+
+#. module: la_project
+#: field:la.project.project,customer_city:0
+msgid "Customer City"
+msgstr "城市"
+
+#. module: la_project
+#: field:la.project.project,customer_contact_ids:0
+msgid "Customer Contacts"
+msgstr "甲方联系人"
+
+#. module: la_project
+#: field:la.project.project,customer_state:0
+msgid "Customer State"
+msgstr "省份"
+
+#. module: la_project
+#: selection:la.project.project,state:0
+msgid "Deep Program"
+msgstr "方案深化修改"
 
 #. module: la_project
 #: field:la.project.project,design_approve:0
@@ -46,9 +81,19 @@ msgid "Design confirm"
 msgstr "设计确认"
 
 #. module: la_project
+#: field:la.project.project,function_chief_ids:0
+msgid "For Search Chiefs"
+msgstr "项目总师"
+
+#. module: la_project
 #: field:la.project.project,funds_comment:0
 msgid "Funds Comment"
 msgstr "收费备注"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "Group by..."
+msgstr "分组..."
 
 #. module: la_project
 #: field:la.project.project,headquarter_deduct:0
@@ -58,7 +103,12 @@ msgstr "总部提成比例"
 #. module: la_project
 #: selection:la.project.project,level:0
 msgid "Headquarter"
-msgstr "总管"
+msgstr "院级"
+
+#. module: la_project
+#: field:la.project.project,importance:0
+msgid "Importance"
+msgstr "重要度"
 
 #. module: la_project
 #: view:la.project.project:0
@@ -66,9 +116,29 @@ msgid "Incomes Info"
 msgstr "收费情况"
 
 #. module: la_project
+#: selection:la.project.project,state:0
+msgid "Initial Plan"
+msgstr "前期策划"
+
+#. module: la_project
+#: selection:la.project.project,state:0
+msgid "Initial program"
+msgstr "初步方案"
+
+#. module: la_project
 #: field:la.project.project,is_documented:0
 msgid "Is Documented"
 msgstr "是否建档"
+
+#. module: la_project
+#: view:la.project.project:0
+msgid "Is Paused"
+msgstr "暂停项目"
+
+#. module: la_project
+#: field:la.project.project,is_pause:0
+msgid "Is Project Pause"
+msgstr "项目已暂停"
 
 #. module: la_project
 #: field:la.project.temp.department,name:0
@@ -117,6 +187,21 @@ msgstr "项目"
 #: model:res.groups,name:la_project.project_admin
 msgid "Project Admin"
 msgstr "项目管理员"
+
+#. module: la_project
+#: model:ir.ui.menu,name:la_project.menu_la_project_project_chief_info
+msgid "Project Chief"
+msgstr "项目信息查询"
+
+#. module: la_project
+#: model:ir.actions.act_window,name:la_project.action_la_project_project_chief
+msgid "Project Chief Info"
+msgstr "项目信息查询"
+
+#. module: la_project
+#: model:res.groups,name:la_project.project_chief
+msgid "Project Chief User"
+msgstr "院领导"
 
 #. module: la_project
 #: field:la.project.project,comment:0
@@ -204,6 +289,11 @@ msgid "Project Number"
 msgstr "项目编号"
 
 #. module: la_project
+#: selection:la.project.project,state:0
+msgid "Project Output"
+msgstr "项目输出"
+
+#. module: la_project
 #: field:la.project.project,scale:0
 msgid "Project Scale"
 msgstr "规模"
@@ -224,11 +314,6 @@ msgid "Project State"
 msgstr "当前进度"
 
 #. module: la_project
-#: field:la.project.project,type_id:0
-msgid "Project Type"
-msgstr "类别"
-
-#. module: la_project
 #: model:ir.actions.act_window,name:la_project.action_la_project_type
 #: view:la.project.type:0
 msgid "Project Type Info"
@@ -238,6 +323,11 @@ msgstr "项目类别"
 #: model:ir.ui.menu,name:la_project.menu_la_project_type
 msgid "Project Type Settings"
 msgstr "项目类别设置"
+
+#. module: la_project
+#: field:la.project.project,type_ids:0
+msgid "Project Types"
+msgstr "项目类别"
 
 #. module: la_project
 #: model:res.groups,name:la_project.project_user
@@ -265,12 +355,17 @@ msgid "Receive Percent (%)"
 msgstr "占合同额比例 (%)"
 
 #. module: la_project
-#: selection:la.project.project,level:0
-msgid "Segment"
-msgstr "部管"
+#: selection:la.project.project,state:0
+msgid "Research & Input"
+msgstr "调研与输入"
 
 #. module: la_project
-#: field:la.project.project,temp_department_id:0
+#: selection:la.project.project,level:0
+msgid "Segment"
+msgstr "所级"
+
+#. module: la_project
+#: field:la.project.project,temp_department_ids:0
 msgid "Temp Design Department"
 msgstr "设计部门"
 
@@ -330,9 +425,9 @@ msgid "la.project.type"
 msgstr "项目类别"
 
 #. module: la_project
-#: code:addons/la_project/models/project.py:85
-#: code:addons/la_project/models/project.py:93
-#: code:addons/la_project/models/project.py:101
+#: code:addons/la_project/models/project.py:105
+#: code:addons/la_project/models/project.py:113
+#: code:addons/la_project/models/project.py:121
 #: sql_constraint:la.project.temp.department:0
 #: sql_constraint:la.project.temp.member:0
 #: sql_constraint:la.project.type:0
@@ -341,16 +436,14 @@ msgid "name must be unique !"
 msgstr "名称不能重复!"
 
 #. module: la_project
-#: code:addons/la_project/models/project.py:65
-#: sql_constraint:la.project.project:0
-#, python-format
-msgid "number must be unique !"
-msgstr "项目编号不能重复!"
-
-#. module: la_project
 #: model:res.groups,comment:la_project.project_admin
 msgid "the Project Admin will be able to access project setting menus."
 msgstr "项目管理员可以通过项目设置菜单管理项目基本属性."
+
+#. module: la_project
+#: model:res.groups,comment:la_project.project_chief
+msgid "the Project Chief will be able to view all project in special view, but can't edit projects."
+msgstr "the Project Chief will be able to view all project in special view, but can't edit projects."
 
 #. module: la_project
 #: model:res.groups,comment:la_project.project_income_manager
