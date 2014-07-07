@@ -42,17 +42,14 @@
         </record>
 
         <!--MenuItems-->
-        <menuitem name="Project" id="menu_la_project_root" sequence="20" groups="la_project.project_user,la_project.project_chief"/>
+        <menuitem name="Project" id="menu_la_project_root" sequence="20" groups="la_project.project_user"/>
         <!--Project Manage MenuItems-->
         <menuitem name="Project Manage" id="menu_la_project_project_manage" sequence="10"
                   parent="menu_la_project_root"
-                  groups="la_project.project_user,la_project.project_chief"/>
+                  groups="la_project.project_user"/>
         <menuitem name="Project Info" id="menu_la_project_project_info" sequence="10"
                   parent="menu_la_project_project_manage" action="action_la_project_project"
                   groups="la_project.project_user"/>
-        <menuitem name="Project Chief" id="menu_la_project_project_chief_info" sequence="12"
-                  parent="menu_la_project_project_manage" action="action_la_project_project_chief"
-                  groups="la_project.project_chief"/>
         <menuitem name="Project Incomes" id="menu_la_project_project_income" sequence="20"
                   parent="menu_la_project_project_manage" action="action_la_project_income"
                   groups="la_project.project_income_manager"/>
