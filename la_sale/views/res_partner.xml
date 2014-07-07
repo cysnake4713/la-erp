@@ -71,12 +71,14 @@
                 <xpath expr="//field[@name='display_name']" position="before">
                     <field name="state_id"/>
                     <field name="city"/>
-                    <field name="name"/>
                     <field name="parent_id"/>
+                    <field name="name"/>
                     <field name="function"/>
                 </xpath>
                 <xpath expr="//field[@name='phone']" position="after">
                     <field name="mobile"/>
+                    <field name="related_projects_number"/>
+                    <field name="related_projects"/>
                     <field name="importance"/>
                 </xpath>
                 <xpath expr="//field[@name='display_name']" position="attributes">
