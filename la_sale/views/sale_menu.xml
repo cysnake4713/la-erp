@@ -53,15 +53,5 @@
         <menuitem name="Partner Event Type Settings" id="menu_partner_event_setting" parent="base.menu_base_config" sequence="50"
                   action="action_res_partner_event_type"
                   groups="base.group_system"/>
-
-        <menuitem name="Contacts"
-            id="menu_partner_project_root"
-            groups="la_project.project_chief"
-            sequence="80"/>
-        <menuitem id="menu_partner_project" parent="menu_partner_project_root"
-                  sequence="2"/>
-        <menuitem name="Partner &amp; Project Info" id="menu_partner_project_info" parent="menu_partner_project"
-                  action="action_res_partner_project_info" sequence="5"
-                  groups="la_project.project_chief"/>
     </data>
 </openerp>
