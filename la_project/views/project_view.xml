@@ -42,7 +42,6 @@
                     <field name="customer_contact_ids"/>
                     <field name="number"/>
                     <field name="name"/>
-                    <field name="importance"/>
                     <field name="temp_department_ids" invisible="1"/>
                 </tree>
             </field>
@@ -114,7 +113,6 @@
                                         <field name="design_input"/>
                                         <field name="design_approve"/>
                                         <field name="design_confirm"/>
-                                        <field name="importance"/>
                                     </group>
                                     <group>
                                         <field name="level"/>

@@ -75,7 +75,6 @@ class LaProject(osv.Model):
 
         'comment': fields.text('Project Comment'),
         'is_pause': fields.boolean('Is Project Pause'),
-        'importance': fields.char('Importance', 64),
     }
     _defaults = {
         # 'state': lambda *a: 'plan',

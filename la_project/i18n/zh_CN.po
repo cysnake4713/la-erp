@@ -106,11 +106,6 @@ msgid "Headquarter"
 msgstr "院级"
 
 #. module: la_project
-#: field:la.project.project,importance:0
-msgid "Importance"
-msgstr "重要度"
-
-#. module: la_project
 #: view:la.project.project:0
 msgid "Incomes Info"
 msgstr "收费情况"
