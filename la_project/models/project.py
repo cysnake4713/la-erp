@@ -5,10 +5,18 @@ from openerp.tools.translate import _
 
 __author__ = 'cysnake4713'
 
+PROJECT_STATE = [('plan', 'Initial Plan'),
+                 ('research', 'Research & Input'),
+                 ('init', 'Initial program'),
+                 ('deep', 'Deep Program'),
+                 ('output', 'Project Output'),
+                 ('complete', 'Complete')]
+
 
 class LaProject(osv.Model):
     _name = "la.project.project"
     # _inherit = ['mail.thread', 'ir.needaction_mixin']
+    _order = 'id desc'
 
     # noinspection PyUnusedLocal
     def _get_receive_funds(self, cr, uid, ids, field_name, args, context=None):
@@ -24,6 +32,12 @@ class LaProject(osv.Model):
         result = dict.fromkeys(ids, False)
         for obj in self.browse(cr, uid, ids, context=context):
             result[obj.id] = ','.join([d.name for d in obj.temp_department_ids])
+        return result
+
+    def _get_state_display(self, cr, uid, ids, field_name, args, context=None):
+        result = dict.fromkeys(ids, False)
+        for obj in self.browse(cr, uid, ids, context=context):
+            result[obj.id] = obj.state
         return result
 
     _columns = {
@@ -54,12 +68,8 @@ class LaProject(osv.Model):
         'design_confirm': fields.char('Design confirm', 256),
         'quality_comment': fields.text('Quality Comment'),
         # Progress
-        'state': fields.selection([('plan', 'Initial Plan'),
-                                   ('research', 'Research & Input'),
-                                   ('init', 'Initial program'),
-                                   ('deep', 'Deep Program'),
-                                   ('output', 'Project Output'),
-                                   ('complete', 'Complete')], 'Project State'),
+        'state': fields.selection(selection=PROJECT_STATE, string='Project State'),
+        'state_display': fields.function(_get_state_display, type='selection', selection=PROJECT_STATE, string='Display State'),
         'progress_percent': fields.char('Progress Percent', 16),
         'this_month_report': fields.char('This Month Report', 128),
         'next_month_report': fields.char('Next Month Report', 128),
@@ -75,6 +85,7 @@ class LaProject(osv.Model):
 
         'comment': fields.text('Project Comment'),
         'is_pause': fields.boolean('Is Project Pause'),
+        'create_date': fields.datetime('Create Date', select=True),
     }
     _defaults = {
         # 'state': lambda *a: 'plan',

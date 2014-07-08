@@ -18,6 +18,8 @@
                     <field name="level"/>
                     <field name="temp_chief_ids"/>
                     <field name="temp_user_ids"/>
+                    <field name="create_date"/>
+                    <field name="total_funds"/>
 
                     <filter name="is-paused" string="Is Paused" domain="[('is_pause','=',True)]"/>
 
@@ -50,16 +52,17 @@
             <field name="name">la.project.project.tree</field>
             <field name="model">la.project.project</field>
             <field name="arch" type="xml">
-                <tree string="Project Info" version="7.0" colors="grey:is_pause==True;green:state=='complete';">
-                    <field name="customer_id"/>
-                    <field name="customer_contact_ids"/>
-                    <field name="number"/>
-                    <field name="name"/>
+                <tree string="Project Info" version="7.0" colors="grey:is_pause==True;green:state!='complete';">
                     <field name="type_ids"/>
-                    <field name="temp_department_ids"/>
+                    <field name="name"/>
+                    <field name="number"/>
                     <field name="temp_user_ids"/>
-                    <field name="state"/>
                     <field name="progress_percent"/>
+                    <field name="this_month_report"/>
+                    <field name="next_month_report"/>
+                    <field name="total_funds"/>
+                    <field name="temp_department_ids" invisible="1"/>
+                    <field name="state" invisible="1"/>
                     <field name="is_pause" invisible="1"/>
                     <field name="function_chief_ids" invisible="1"/>
                 </tree>
@@ -71,7 +74,7 @@
             <field name="arch" type="xml">
                 <form string="Project Info" version="7.0">
                     <header>
-                        <field name="state" widget="statusbar" clickable="True"/>
+                        <field name="state_display" widget="statusbar"/>
                     </header>
                     <sheet>
                         <div class="oe_title oe_long_title">
@@ -128,6 +131,7 @@
                             <page string="Progress Info">
                                 <group>
                                     <group>
+                                        <field name="state"/>
                                         <field name="is_pause"/>
                                         <field name="progress_percent"/>
                                     </group>
