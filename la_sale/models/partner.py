@@ -13,7 +13,7 @@ class PartnerInherit(osv.Model):
         for partner in self.browse(cr, uid, ids, context=context):
             project_ids = project_obj.search(cr, SUPERUSER_ID, ['|', ('customer_id', '=', partner.id), ('customer_contact_ids', '=', partner.id)],
                                              context=context)
-            related_projects_number = ','.join([p.number for p in project_obj.browse(cr, SUPERUSER_ID, project_ids, context)])
+            related_projects_number = ','.join([p.number for p in project_obj.browse(cr, SUPERUSER_ID, project_ids, context) if p.number])
             result[partner.id] = {
                 'related_projects': project_ids,
                 'related_projects_number': related_projects_number,
@@ -46,6 +46,6 @@ class PartnerInherit(osv.Model):
         if self._rec_name in self._all_columns:
             rec_name_column = self._all_columns[self._rec_name].column
             return [(r['id'], rec_name_column.as_display_name(cr, user, self, r[self._rec_name], context=context))
-                        for r in self.read(cr, user, ids, [self._rec_name],
+                    for r in self.read(cr, user, ids, [self._rec_name],
                                        load='_classic_write', context=context)]
         return [(id, "%s,%s" % (self._name, id)) for id in ids]
