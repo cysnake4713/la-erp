@@ -158,7 +158,7 @@
                                         <label for="income_ids"/>
                                         <field name="income_ids" nolabel="1">
                                             <tree editable="top">
-                                                <field name="price" widget="monetary"/>
+                                                <field name="price"/>
                                                 <field name="paid_date"/>
                                             </tree>
                                         </field>
