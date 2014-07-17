@@ -90,11 +90,13 @@
                                 <field name="type_ids" widget="many2many_tags"/>
                                 <field name="temp_department_ids" widget="many2many_tags"/>
                                 <field name="customer_id" domain="[('is_company','=',True)]"/>
+                                <field name="proxy_type"/>
                             </group>
                             <group>
                                 <field name="sign_date"/>
                                 <field name="scale"/>
                                 <field name="location"/>
+                                <field name="source"/>
                             </group>
                             <group colspan="2">
                                 <field name="customer_contact_ids" domain="[('parent_id','=',customer_id)]"
@@ -105,24 +107,21 @@
                                         <field name="phone"/>
                                         <field name="mobile"/>
                                     </tree>
-                                       </field>
+                                </field>
                             </group>
                         </group>
                         <notebook>
                             <page string="Quality Info">
                                 <group>
                                     <group>
-                                        <field name="design_plan"/>
-                                        <field name="design_input"/>
-                                        <field name="design_approve"/>
-                                        <field name="design_confirm"/>
-                                    </group>
-                                    <group>
                                         <field name="level"/>
                                         <field name="temp_chief_ids" widget="many2many_tags"/>
                                         <field name="temp_user_ids" widget="many2many_tags"/>
+                                        <field name="temp_approve_ids" widget="many2many_tags"/>
+                                        <field name="temp_proof_ids" widget="many2many_tags"/>
                                         <field name="is_documented"/>
                                     </group>
+                                    <group></group>
                                     <group col="1" colspan="2">
                                         <field name="quality_comment"/>
                                     </group>
@@ -131,13 +130,17 @@
                             <page string="Progress Info">
                                 <group>
                                     <group>
-                                        <field name="state"/>
-                                        <field name="is_pause"/>
-                                        <field name="progress_percent"/>
+                                        <field name="design_plan"/>
+                                        <field name="design_input"/>
+                                        <field name="design_approve"/>
+                                        <field name="design_confirm"/>
                                     </group>
                                     <group>
                                         <field name="this_month_report"/>
                                         <field name="next_month_report"/>
+                                        <field name="state"/>
+                                        <field name="is_pause"/>
+                                        <field name="progress_percent"/>
                                     </group>
                                     <group col="1" colspan="2">
                                         <field name="progress_comment"/>
