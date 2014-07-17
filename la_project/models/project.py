@@ -22,7 +22,7 @@ class LaProject(osv.Model):
     def _get_receive_funds(self, cr, uid, ids, field_name, args, context=None):
         result = dict.fromkeys(ids, {'receive_funds': 0.0, 'receive_percent': 0.0})
         for obj in self.browse(cr, uid, ids, context=context):
-            prices = sum([i.price for i in obj.income_ids])
+            prices = sum([i.price for i in obj.income_ids if i.is_paid])
             receive_percent = prices / obj.total_funds * 100 if obj.total_funds else 0
             result[obj.id].update({'receive_funds': prices, 'receive_percent': receive_percent})
         return result
@@ -144,6 +144,7 @@ class LaProjectIncome(osv.Model):
         'price': fields.float('Price', digits=(10, 4), required=True),
         'paid_date': fields.date('Paid Date'),
         'project_id': fields.many2one('la.project.project', 'Project', required=True),
+        'is_paid': fields.boolean('Is Paid'),
     }
 
     _defaults = {

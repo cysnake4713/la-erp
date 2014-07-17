@@ -163,6 +163,7 @@
                                             <tree editable="top">
                                                 <field name="price"/>
                                                 <field name="paid_date"/>
+                                                <field name="is_paid"/>
                                             </tree>
                                         </field>
                                         <field name="funds_comment"/>
@@ -193,6 +194,7 @@
                     <field name="project_id"/>
                     <field name="price"/>
                     <field name="paid_date"/>
+                    <field name="is_paid"/>
                 </tree>
             </field>
         </record>
@@ -206,6 +208,7 @@
                             <field name="project_id"/>
                             <field name="price"/>
                             <field name="paid_date"/>
+                            <field name="is_paid"/>
                         </group>
                     </sheet>
                 </form>
