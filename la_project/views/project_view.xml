@@ -120,6 +120,7 @@
                                         <field name="temp_approve_ids" widget="many2many_tags"/>
                                         <field name="temp_proof_ids" widget="many2many_tags"/>
                                         <field name="is_documented"/>
+                                        <field name="documented_number"/>
                                     </group>
                                     <group></group>
                                     <group col="1" colspan="2">

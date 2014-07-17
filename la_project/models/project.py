@@ -68,6 +68,7 @@ class LaProject(osv.Model):
         'temp_proof_ids': fields.many2many('la.project.temp.member', 'rel_temp_proof_member', 'temp_proof_id', 'member_id',
                                            string='Temp Project Proof'),
         'is_documented': fields.boolean('Is Documented'),
+        'documented_number': fields.char('Documented Number', 32),
         'design_plan': fields.char('Design Plan', 256),
         'design_input': fields.char('Design Input', 256),
         'design_approve': fields.char('Design Approve', 256),
@@ -95,7 +96,7 @@ class LaProject(osv.Model):
     }
     _defaults = {
         # 'state': lambda *a: 'plan',
-        'sign_date': lambda *args: fields.date.today(),
+        # 'sign_date': lambda *args: fields.date.today(),
     }
 
     # _sql_constraints = [('project_number_unique', 'unique(number)', _('number must be unique !'))]
