@@ -35,6 +35,9 @@
                 <xpath expr="//field[@name='title']" position="after">
                     <field name="importance"/>
                 </xpath>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field name="customer_type"/>
+                </xpath>
             </field>
         </record>
         <record id="view_partner_tree_inherit" model="ir.ui.view">
@@ -54,6 +57,7 @@
                     <field name="related_projects_number"/>
                     <field name="related_projects"/>
                     <field name="importance"/>
+                    <field name="customer_type" invisible="1"/>
                 </xpath>
                 <xpath expr="//field[@name='display_name']" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -74,6 +78,9 @@
                     <field name="function"/>
                     <field name="importance"/>
                     <field name="mobile"/>
+                </xpath>
+                <xpath expr="//filter[@string='Country']" position="after">
+                    <filter string="Customer Type" name="customer-type" context="{'group_by':'customer_type'}"/>
                 </xpath>
             </field>
         </record>

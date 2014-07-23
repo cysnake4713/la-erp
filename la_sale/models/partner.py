@@ -26,6 +26,10 @@ class PartnerInherit(osv.Model):
                                             multi='project'),
         'related_projects_number': fields.function(_get_related_projects, type='char', string='Related Projects Number',
                                                    multi='project'),
+        # TODO:
+        'customer_type': fields.selection(
+            selection=[('friendly_co', 'Friend Co'), ('project_partner', 'Project Partner'),
+                       ('pertential', 'Pertential'), ('else', 'Else')], string='Customer Type'),
     }
 
     def name_get(self, cr, user, ids, context=None):
