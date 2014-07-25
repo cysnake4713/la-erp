@@ -59,10 +59,10 @@ class PartnerInherit(osv.Model):
 
     def _fields_sync(self, cr, uid, partner, update_values, context=None):
         super(PartnerInherit, self)._fields_sync(cr, uid, partner, update_values, context)
-        if update_values.get('customer_type'):
+        # if update partner parent
+        if update_values.get('parent_id') and partner.is_company is False:
             if partner.parent_id:
-                self.write(cr, uid, partner.id, {'customer_type', partner.parent_id.customer_type}, context=context)
-
+                partner.write({'customer_type': partner.parent_id.customer_type})
+        # if update a company
         if partner.child_ids:
-            child_ids = [c.id for c in partner.child_ids]
-            self.write(cr, uid, child_ids, {'customer_type': partner.customer_type}, context=context)
+            partner.child_ids.write({'customer_type': partner.customer_type})
