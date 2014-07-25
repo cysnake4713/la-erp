@@ -11,9 +11,11 @@ class PartnerInherit(osv.Model):
         result = dict.fromkeys(ids, False)
         project_obj = self.pool.get('la.project.project')
         for partner in self.browse(cr, uid, ids, context=context):
-            project_ids = project_obj.search(cr, SUPERUSER_ID, ['|', ('customer_id', '=', partner.id), ('customer_contact_ids', '=', partner.id)],
+            project_ids = project_obj.search(cr, SUPERUSER_ID, ['|', ('customer_id', '=', partner.id),
+                                                                ('customer_contact_ids', '=', partner.id)],
                                              context=context)
-            related_projects_number = ','.join([p.number for p in project_obj.browse(cr, SUPERUSER_ID, project_ids, context) if p.number])
+            related_projects_number = ','.join(
+                [p.number for p in project_obj.browse(cr, SUPERUSER_ID, project_ids, context) if p.number])
             result[partner.id] = {
                 'related_projects': project_ids,
                 'related_projects_number': related_projects_number,
@@ -22,7 +24,8 @@ class PartnerInherit(osv.Model):
 
     _columns = {
         'importance': fields.char('Importance', 64),
-        'related_projects': fields.function(_get_related_projects, type='many2many', obj='la.project.project', string='Related Projects',
+        'related_projects': fields.function(_get_related_projects, type='many2many', obj='la.project.project',
+                                            string='Related Projects',
                                             multi='project'),
         'related_projects_number': fields.function(_get_related_projects, type='char', string='Related Projects Number',
                                                    multi='project'),
@@ -53,3 +56,13 @@ class PartnerInherit(osv.Model):
                     for r in self.read(cr, user, ids, [self._rec_name],
                                        load='_classic_write', context=context)]
         return [(id, "%s,%s" % (self._name, id)) for id in ids]
+
+    def _fields_sync(self, cr, uid, partner, update_values, context=None):
+        super(PartnerInherit, self)._fields_sync(cr, uid, partner, update_values, context)
+        if update_values.get('customer_type'):
+            if partner.parent_id:
+                self.write(cr, uid, partner.id, {'customer_type', partner.parent_id.customer_type}, context=context)
+
+        if partner.child_ids:
+            child_ids = [c.id for c in partner.child_ids]
+            self.write(cr, uid, child_ids, {'customer_type': partner.customer_type}, context=context)
