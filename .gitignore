@@ -28,3 +28,6 @@ pip-log.txt
 *.swp
 .idea
 atlassian-ide-plugin.xml
+
+/log
+/data
