@@ -32,6 +32,35 @@
                 </search>
             </field>
         </record>
+
+        <record id="view_la_project_project_search_public" model="ir.ui.view">
+            <field name="name">la.project.project.search.public</field>
+            <field name="model">la.project.project</field>
+            <field name="arch" type="xml">
+                <search string="Project Search">
+                    <field name="type_ids"/>
+                    <field name="name"/>
+                    <field name="temp_department_ids"/>
+                    <field name="number"/>
+                    <field name="sign_date"/>
+                    <field name="scale"/>
+                    <field name="location"/>
+                    <field name="level"/>
+                    <field name="temp_chief_ids"/>
+                    <field name="temp_user_ids"/>
+                    <field name="state"/>
+                    <field name="is_documented"/>
+                    <filter name="is-paused" string="Is Paused" domain="[('is_pause','=',True)]"/>
+                    <group expand="0" string="Group by...">
+                        <filter name="by-department" string="By Department" domain="[]"
+                                context="{'group_by':'function_chief_ids'}"/>
+                        <filter name="by-state" string="By State" domain="[]"
+                                context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <record id="view_la_project_project_tree_customer" model="ir.ui.view">
             <field name="name">la.project.project.tree.customer</field>
             <field name="model">la.project.project</field>
@@ -48,6 +77,28 @@
                 </tree>
             </field>
         </record>
+
+        <record id="view_la_project_project_tree_public" model="ir.ui.view">
+            <field name="name">la.project.project.tree.public</field>
+            <field name="model">la.project.project</field>
+            <field name="arch" type="xml">
+                <tree string="Project Info">
+                    <field name="type_ids"/>
+                    <field name="name"/>
+                    <field name="temp_department_ids"/>
+                    <field name="number"/>
+                    <field name="sign_date"/>
+                    <field name="scale"/>
+                    <field name="location"/>
+                    <field name="level"/>
+                    <field name="temp_chief_ids"/>
+                    <field name="temp_user_ids"/>
+                    <field name="state"/>
+                    <field name="is_documented"/>
+                </tree>
+            </field>
+        </record>
+
         <record id="view_la_project_project_tree" model="ir.ui.view">
             <field name="name">la.project.project.tree</field>
             <field name="model">la.project.project</field>

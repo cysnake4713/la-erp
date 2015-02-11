@@ -1,6 +1,6 @@
 [options]
 timezone = Etc/GMT-8
-addons_path = /home/cysnake4713/pythonenv/la-erp/odoo/addons,/home/cysnake4713/githome/la-erp
+addons_path = /home/cysnake4713/pythonenv/la-erp/odoo/addons,/home/cysnake4713/githome/la-erp/addons
 admin_passwd = admin
 csv_internal_sep = ,
 db_host = localhost

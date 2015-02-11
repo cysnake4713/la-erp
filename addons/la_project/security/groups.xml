@@ -15,7 +15,6 @@
             <field name="name">Project Manager</field>
             <field name="category_id" ref="base.module_category_project_management"/>
             <field name="comment">the Project Manager will be able to edit projects.</field>
-            <field name="implied_ids" eval="[(4, ref('la_project.project_user'))]"/>
         </record>
         <record id="la_project.project_admin" model="res.groups">
             <field name="name">Project Admin</field>

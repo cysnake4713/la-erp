@@ -13,6 +13,6 @@ class ResUsers(osv.Model):
         result.append(group_id)
         return result
 
-    _defaults = {
-        'groups_id': _get_group,
-    }
+    # _defaults = {
+    #     'groups_id': _get_group,
+    # }

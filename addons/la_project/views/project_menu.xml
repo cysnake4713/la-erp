@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
+        <record id="action_la_project_project_public" model="ir.actions.act_window">
+            <field name="name">项目公开信息</field>
+            <field name="res_model">la.project.project</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="search_view_id" ref="la_project.view_la_project_project_search_public"/>
+            <field name="context">{'search_default_by-department': 1,'tree_view_ref':'la_project.view_la_project_project_tree_public'}</field>
+        </record>
 
         <record id="action_la_project_project" model="ir.actions.act_window">
             <field name="name">Project Info</field>
             <field name="res_model">la.project.project</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="la_project.view_la_project_project_search"/>
             <field name="context">{'search_default_by-department': 1,'tree_view_ref':'la_project.view_la_project_project_tree'}</field>
         </record>
         <record id="action_la_project_project_chief" model="ir.actions.act_window">
@@ -14,6 +23,7 @@
             <field name="res_model">la.project.project</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="la_project.view_la_project_project_search"/>
             <field name="context">{'search_default_by-department': 1,'tree_view_ref':'la_project.view_la_project_project_tree_customer'}</field>
         </record>
         <record id="action_la_project_income" model="ir.actions.act_window">
@@ -42,17 +52,20 @@
         </record>
 
         <!--MenuItems-->
-        <menuitem name="Project" id="menu_la_project_root" sequence="20" groups="la_project.project_user"/>
+        <menuitem name="Project" id="menu_la_project_root" sequence="20" groups="la_project.project_user,la_project.project_manager"/>
         <!--Project Manage MenuItems-->
         <menuitem name="Project Manage" id="menu_la_project_project_manage" sequence="10"
                   parent="menu_la_project_root"
-                  groups="la_project.project_user"/>
+                  groups="la_project.project_user,la_project.project_manager"/>
         <menuitem name="Project Info" id="menu_la_project_project_info" sequence="10"
                   parent="menu_la_project_project_manage" action="action_la_project_project"
-                  groups="la_project.project_user"/>
+                  groups="la_project.project_manager"/>
         <menuitem name="Project Incomes" id="menu_la_project_project_income" sequence="20"
                   parent="menu_la_project_project_manage" action="action_la_project_income"
                   groups="la_project.project_income_manager"/>
+        <menuitem name="公开项目信息" id="menu_la_project_project_public_info" sequence="30"
+                  parent="menu_la_project_project_manage" action="action_la_project_project_public"
+                  groups="la_project.project_user"/>
         <!--Project Settings MenuItems-->
         <menuitem name="Project Settings" id="menu_la_project_project_settings" sequence="50"
                   parent="menu_la_project_root"
