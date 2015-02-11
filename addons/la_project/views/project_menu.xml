@@ -52,14 +52,14 @@
         </record>
 
         <!--MenuItems-->
-        <menuitem name="Project" id="menu_la_project_root" sequence="20" groups="la_project.project_user,la_project.project_manager"/>
+        <menuitem name="Project" id="menu_la_project_root" sequence="20" groups="la_project.project_user,la_project.project_chief,la_project.project_manager"/>
         <!--Project Manage MenuItems-->
         <menuitem name="Project Manage" id="menu_la_project_project_manage" sequence="10"
                   parent="menu_la_project_root"
-                  groups="la_project.project_user,la_project.project_manager"/>
+                  groups="la_project.project_user,la_project.project_manager,la_project.project_chief"/>
         <menuitem name="Project Info" id="menu_la_project_project_info" sequence="10"
                   parent="menu_la_project_project_manage" action="action_la_project_project"
-                  groups="la_project.project_manager"/>
+                  groups="la_project.project_chief,la_project.project_manager"/>
         <menuitem name="Project Incomes" id="menu_la_project_project_income" sequence="20"
                   parent="menu_la_project_project_manage" action="action_la_project_income"
                   groups="la_project.project_income_manager"/>
