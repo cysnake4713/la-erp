@@ -31,3 +31,5 @@ atlassian-ide-plugin.xml
 
 /log
 /data
+/odoo.conf
+/odoo_debug.conf
