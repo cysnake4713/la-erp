@@ -25,7 +25,7 @@
     'description': u"""
 Project Module For Leiao Company
 """,
-    'depends': ['base', 'base_override'],
+    'depends': ['base'],
     'category': 'Project Management',
     'demo_xml': [],
     'data': [
