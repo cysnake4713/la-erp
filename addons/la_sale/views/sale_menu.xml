@@ -21,6 +21,14 @@
             <field name="context">{"search_default_customer":1}</field>
             <field name="domain">[('is_company','=',False)]</field>
         </record>
+        <record id="action_res_partner_company" model="ir.actions.act_window">
+            <field name="name">公司信息</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_customer":1}</field>
+            <field name="domain">[('is_company','=',True)]</field>
+        </record>
         <record id="base.action_partner_form" model="ir.actions.act_window">
             <field name="name">Customers</field>
             <field name="type">ir.actions.act_window</field>
@@ -46,6 +54,9 @@
             <field name="view_id" ref="base.res_partner_kanban_view"/>
             <field name="act_window_id" ref="base.action_partner_form"/>
         </record>
+
+        <menuitem name="公司信息" id="menu_res_partner_company" parent="base.menu_sales"
+                  action="action_res_partner_company" sequence="3"/>
 
         <menuitem name="Partner Event" id="menu_sale_event" parent="base.menu_sales"
                   action="action_res_partner_event" sequence="4"
