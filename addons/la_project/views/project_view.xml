@@ -74,7 +74,7 @@
             <field name="model">la.project.project</field>
             <field name="priority" eval="30"/>
             <field name="arch" type="xml">
-                <tree string="Project Info" version="7.0">
+                <tree string="Project Info">
                     <field name="customer_state"/>
                     <field name="customer_city"/>
                     <field name="customer_id"/>
@@ -90,7 +90,7 @@
             <field name="name">la.project.project.tree.public</field>
             <field name="model">la.project.project</field>
             <field name="arch" type="xml">
-                <tree string="Project Info">
+                <tree string="Project Info" colors="grey:is_pause==True;green:state!='complete';">
                     <field name="type_ids"/>
                     <field name="name"/>
                     <field name="temp_department_ids"/>
@@ -120,6 +120,9 @@
                     <field name="this_month_report"/>
                     <field name="next_month_report"/>
                     <field name="total_funds"/>
+                    <field name="sign_date"/>
+                    <field name="create_date"/>
+                    <field name="write_date"/>
                     <field name="temp_department_ids" invisible="1"/>
                     <field name="state" invisible="1"/>
                     <field name="is_pause" invisible="1"/>

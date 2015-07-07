@@ -304,6 +304,11 @@ msgid "Project Sign_date"
 msgstr "签订日期"
 
 #. module: la_project
+#: field:la.project.project,write_date:0
+msgid "Last Updated on"
+msgstr "最近更新日期"
+
+#. module: la_project
 #: field:la.project.project,state:0
 msgid "Project State"
 msgstr "当前进度"
