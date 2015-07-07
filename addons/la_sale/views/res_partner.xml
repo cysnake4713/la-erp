@@ -57,6 +57,8 @@
                     <field name="related_projects_number"/>
                     <field name="related_projects"/>
                     <field name="importance"/>
+                    <field name="create_date"/>
+                    <field name="write_date"/>
                     <field name="customer_type" invisible="1"/>
                 </xpath>
                 <xpath expr="//field[@name='display_name']" position="attributes">
