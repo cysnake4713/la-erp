@@ -28,6 +28,10 @@
                                 context="{'group_by':'function_chief_ids'}"/>
                         <filter name="by-state" string="By State" domain="[]"
                                 context="{'group_by':'state'}"/>
+                        <filter name="by-state" string="按更新日期分组" domain="[]"
+                                context="{'group_by':'write_date:month'}"/>
+                        <filter name="by-state" string="按创建日期分组" domain="[]"
+                                context="{'group_by':'create_date:month'}"/>
                     </group>
                 </search>
             </field>
@@ -56,6 +60,10 @@
                                 context="{'group_by':'function_chief_ids'}"/>
                         <filter name="by-state" string="By State" domain="[]"
                                 context="{'group_by':'state'}"/>
+                        <filter name="by-state" string="按更新日期分组" domain="[]"
+                                context="{'group_by':'write_date:month'}"/>
+                        <filter name="by-state" string="按创建日期分组" domain="[]"
+                                context="{'group_by':'create_date:month'}"/>
                     </group>
                 </search>
             </field>
