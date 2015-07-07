@@ -33,3 +33,4 @@ atlassian-ide-plugin.xml
 /data
 /odoo.conf
 /odoo_debug.conf
+/.openerp_serverrc
