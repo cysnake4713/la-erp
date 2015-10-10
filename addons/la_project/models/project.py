@@ -56,7 +56,7 @@ class LaProject(osv.Model):
         'scale': fields.char('Project Scale', 128),
         'location': fields.char('Project Location'),
         'proxy_type': fields.selection([('direct', 'Direct'), ('tender', 'Tender'), ('else', 'Else')], 'Proxy Type'),
-        'source': fields.selection([('headquarter_assign', 'Headquarter assign'), ('autonomous', 'Autonomous')], 'Project Source'),
+        'source': fields.selection([('headquarter_assign', 'Headquarter assign'), ('autonomous', 'Autonomous'), ('foshan', u'佛山办事处')], 'Project Source'),
         # quality
         'level': fields.selection([('segment', 'Segment'), ('headquarter', 'Headquarter')], 'Project Level'),
         'temp_chief_ids': fields.many2many('la.project.temp.member', 'rel_temp_chief_member', 'temp_chief_id', 'member_id', 'Temp Project Chief',

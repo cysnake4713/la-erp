@@ -103,7 +103,7 @@ msgstr "总部提成比例"
 #. module: la_project
 #: selection:la.project.project,level:0
 msgid "Headquarter"
-msgstr "院级"
+msgstr "总管"
 
 #. module: la_project
 #: view:la.project.project:0
@@ -362,7 +362,7 @@ msgstr "调研与输入"
 #. module: la_project
 #: selection:la.project.project,level:0
 msgid "Segment"
-msgstr "所级"
+msgstr "部管"
 
 #. module: la_project
 #: field:la.project.project,temp_department_ids:0
